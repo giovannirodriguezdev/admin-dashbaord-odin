@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Lexend Giga", serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f4f4f4;
+    background: #fceee5;
 }
 
 /* Dashboard Layout */
@@ -22,119 +22,143 @@ body {
     max-width: 1200px;
     height: 90vh;
     background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
-    background: #FFFDF0;
-    color: white;
+    background: #fff;
     padding: 20px;
     display: grid;
-    gap: 15px;
-    align-content: start;
-    border-radius: 10px;
+    gap: 10px;
+    align-content: space-between;
 }
 
-#logo {
-    width: 8rem;
-    display: flex;
-    justify-self: center;
+.profile h2 {
+    text-transform: uppercase;
 }
 
-.dash-icon {
-    width: 1.5rem;
+.profile {
+    text-align: center;
 }
 
-.logo span {
-    color: #D9DFC6;
+.profile img {
+    width: 10rem;
+    height: 10rem;
 }
 
-.menu {
+.profile h3 {
+    margin-top: -20px;
+}
+
+.menu ul {
+    list-style: none;
     display: grid;
     gap: 10px;
-    list-style: none;
-    color: black;
 }
 
 .menu li {
     padding: 10px;
-    /* background: #333; */
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
+    /* background: #f4f4f4; */
+    border-radius: 5px;
+    cursor: pointer;
+    /* justify-content: center; */
 }
 
 .menu li.active, .menu li:hover {
-    background: #D9DFC6;
-    padding: 7px;
+    background: #ff6b6b;
+    color: white;
+}
+
+.team-info {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+
+.nav-icons {
+    width: 1.5rem;
+}
+
+.team-icons {
+    width: 4rem;
 }
 
 /* Main Content */
 .main-content {
     display: grid;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
     gap: 20px;
     padding: 20px;
 }
 
 /* Header */
 .header {
-    /* display: grid; */
-    /* grid-template-columns: repeat(4, auto); */
-    /* align-items: center; */
-    background: #fff;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav {
-    /* display: grid; */
-    /* grid-template-columns: repeat(4, auto); */
-    /* list-style: none; */
-    /* background: red; */
-    /* padding: 5px; */
-}
-
-.nav ul {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    /* background: red; */
-    /* align-items: center; */
+    grid-template-columns: 1fr auto auto;
     gap: 10px;
-    padding: 10px;
-}
-
-.nav li {
-    display: grid;
     align-items: center;
 }
 
-.nav a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-    display: flex;
-    gap: 10px;
+.search-bar {
+    padding: 10px;
+    border: solid 1px rgba(0, 0, 0, .07);
+    /* background: #f4f4f4; */
+
+    border-radius: 10px;
 }
 
-.nav-btn {
-    width: 1rem;
-}
-
-.profile {
-    background: #ff4d4d;
+.premium-btn {
+    background: #ff6b6b;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-/* Overview Cards */
-.overview {
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+}
+
+.hero-icons {
+    width: 6rem;
+}
+
+.hero h1 {
+    font-size: 24px;
+}
+
+.hero p {
+    color: #555;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+strong {
+    font-size: 1.5rem;
+}
+
+.stats div {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Recipe Cards */
+.recipes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
@@ -142,31 +166,45 @@ body {
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-weight: bold;
 }
 
-.card span {
-    display: block;
+.card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.card .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+}
+
+.card .intermediate {
+    background: orange;
+}
+
+.card .advanced {
+    background: red;
+}
+
+.card .beginner {
+    background: green;
+}
+
+.card button {
+    background: #ff6b6b;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
     margin-top: 10px;
-    font-size: 1.2em;
-    color: #ff4d4d;
-}
-
-/* Charts Section */
-.charts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-.chart {
-    background: white;
-    padding: 40px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
